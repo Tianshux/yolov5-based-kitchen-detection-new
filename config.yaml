@@ -1,0 +1,14 @@
+remoteServerIP: '0.0.0.0'
+remoteServerPort: 5000
+httpPush:
+  taskStatusPushUrl: 'http://192.168.2.131:9003/ivm/v1/ivu/alg/task/status'
+  captureDataPushUrl: 'http://192.168.2.131:9003/ivm/v1/ivu/alg/snap/event'
+runtime:
+  # 算法name
+  algName: 厨房监控
+  algCode: mask #不可更改
+  #算法描述
+  algDesc: 检测厨房异常行为
+  #gpu id
+  gpu-type: cpu #如果是cpu在这里选择cpu
+  gpu-id: 0

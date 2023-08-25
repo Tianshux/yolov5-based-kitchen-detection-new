@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend Test</title>
+</head>
+<body>
+    <h1>Frontend Test</h1>
+    <button onclick="sendJson()">Send JSON</button>
+
+    <script>
+        function sendJson() {
+            // 构建要发送的JSON数据
+            const jsonData = {
+            "imageBase64":'None',
+            'imageUrl':'https://ts1.cn.mm.bing.net/th/id/R-C.841797a8459ca6fd57fd44ff95cc0eae?rik=BOcK3XUXDFUBHg&riu=http%3a%2f%2fwww.csxdf.com%2fuploads%2fallimg%2f170222%2f22_170222155855_1.jpg&ehk=ZzPW6%2bjqUvmTPPglyxUa6I3OdUJGsqXNv6He%2fV81jHI%3d&risl=&pid=ImgRaw&r=0',
+            'algCode': 'chef'
+            };
+
+            // 将JSON对象转换为JSON字符串
+            const jsonString = JSON.stringify(jsonData);
+            // 向后端发送POST请求
+            fetch('http://127.0.0.1:5000/detect', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: jsonString
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 处理服务器返回的JSON响应
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

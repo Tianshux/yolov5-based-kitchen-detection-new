@@ -1,0 +1,17 @@
+remoteServerIP: '192.168.2.130'
+remoteServerPort: 5000
+httpPush:
+  taskStatusPushUrl: 'http://192.168.2.131:9003/ivm/v1/ivu/alg/task/status'
+  captureDataPushUrl: 'http://192.168.2.131:9003/ivm/v1/ivu/alg/snap/event'
+#  taskStatusPushUrl: 'http://192.168.1.63:7000/receive'
+#  captureDataPushUrl: 'http://192.168.1.63:7000/receive'
+runtime:
+  # 算法name
+  algName: 厨房监控
+  # 算法code, 可选择的算法种类: chef: 厨师服厨师帽及老鼠检测 ; mask: 口罩佩戴检测; phone_smoke: 抽烟打电话检测
+  algCode: mask
+  #算法描述
+  algDesc: 检测厨房异常行为
+  #gpu id
+  gpu-type: cpu #如果是cpu在这里选择cpu
+  gpu-id: 0
